@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-16 01:50:40
+/* Smarty version 4.2.1, created on 2022-10-17 22:22:51
   from 'C:\xampp\htdocs\web 2\TPE\templates\gardenlist.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634b4750d25701_94383821',
+  'unifunc' => 'content_634db99b08a626_03550533',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '00c1b3835f9c6165f78d77e44c8ff3d94ddd8aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web 2\\TPE\\templates\\gardenlist.tpl',
-      1 => 1665877677,
+      1 => 1666037028,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634b4750d25701_94383821 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634db99b08a626_03550533 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -101,12 +101,6 @@ $_smarty_tpl->tpl_vars['type']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </tr>
 </table>
-
-
-
-
-
-
 </table>   
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

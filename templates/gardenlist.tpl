@@ -46,12 +46,6 @@
         {/foreach}
         </tr>
 </table>
-
-
-
-
-
-
 </table>   
 {include file="footer.tpl"}
 

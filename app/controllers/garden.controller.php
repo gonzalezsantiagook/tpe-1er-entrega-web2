@@ -28,6 +28,7 @@ class gardenController {
     
 // agrego un nuevo item en la tabla products.
     function addgarden() {
+        $this->authHelper->checkLoggedIn();
         $name =$_POST['name'];
         $price =$_POST['price'];
         $stock =$_POST['stock'];
@@ -38,6 +39,7 @@ class gardenController {
     }
 // agrego un nuevo item en la tabla types.
     function addtype(){
+        $this->authHelper->checkLoggedIn();
         $type=$_POST['type'];
         $season=$_POST['season'];
         $this->model->insertype($type,$season);
@@ -50,11 +52,13 @@ class gardenController {
     }
 // elimino un elemento de la tabla types en la db.
     function deletetype($id){
+        $this->authHelper->checkLoggedIn();
         $this->model->deletetypebyId($id);
         header("location:". BASE_URL."list");
     }
 // llamo a mostrar el tpl donde muestra el formulario para modificar el elemento.
     function showmodificproduct($Id){
+        $this->authHelper->checkLoggedIn();
         $gardens = $this->model->getAllTable();
         foreach($gardens as $product){
                 if ($product->Id==$Id)
@@ -62,7 +66,8 @@ class gardenController {
         }
     }
 // modifico un elemento de la tabla products.
-  public  function modificgarden($Id){ 
+    public  function modificgarden($Id){ 
+        $this->authHelper->checkLoggedIn();
         $name =$_POST["name"];
         $price =$_POST["price"];
         $stock =$_POST["stock"];
@@ -72,8 +77,13 @@ class gardenController {
         header("Location: " . BASE_URL."list"); 
     }
 // filtro tipos
-    function filtertype(){
-
+    function filtertype($id){
+        $this->authHelper->checkLoggedIn();
+    $gardens = $this->model-> getAllTable();
+    foreach ($gardens as $product) {
+        if($product->id==$id)
+                $this->view->showfilterproduct();
+    }
     }
 
     

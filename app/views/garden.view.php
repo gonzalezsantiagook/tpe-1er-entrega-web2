@@ -25,7 +25,7 @@ class gardenView{
         $this->smarty->display('modific.tpl');
     }
     function showfilterproduct(){
-        $this-> smarty->assign('product')
+        $this-> smarty->assign('product');
 
     }
 }
