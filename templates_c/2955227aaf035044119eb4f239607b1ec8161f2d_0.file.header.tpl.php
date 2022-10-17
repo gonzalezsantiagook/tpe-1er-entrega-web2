@@ -1,7 +1,32 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.2.1, created on 2022-10-15 03:26:18
+  from 'C:\xampp\htdocs\web 2\TPE\templates\header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.1',
+  'unifunc' => 'content_634a0c3abf24e3_50912974',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2955227aaf035044119eb4f239607b1ec8161f2d' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\web 2\\TPE\\templates\\header.tpl',
+      1 => 1665797176,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_634a0c3abf24e3_50912974 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="<?php echo BASE_URL ?>">
+    <base href="<?php echo '<?php'; ?>
+ echo BASE_URL <?php echo '?>'; ?>
+">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,12 +48,12 @@
                 <ul class="navbar-nav">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="home">Home</a>
-                    {if !isset($smarty.session.USER_ID)}
+                    <?php if (!(isset($_SESSION['USER_ID']))) {?>
                       <a class="nav-link active" aria-current="page" href="login">Admin Login</a>
-                    {else}
+                    <?php } else { ?>
                         <a class="nav-link active" aria-current="page" href="logout">Log out</a>
                         
-                    {/if}
+                    <?php }?>
                     
                   </li>
                 </ul>
@@ -39,3 +64,5 @@
 
     <!-- inicio main container -->
     <main class="container">
+<?php }
+}

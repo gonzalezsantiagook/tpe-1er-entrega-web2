@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-10 17:53:18
-  from 'C:\xampp\htdocs\web 2\prueba\templates\header.tpl' */
+/* Smarty version 4.2.1, created on 2022-10-11 22:42:25
+  from 'C:\xampp\htdocs\web 2\tpe 1er entrega web2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63443fee1fc8b6_34027594',
+  'unifunc' => 'content_6345d531c70308_77198892',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '89d994fcf6194c35305e9ef137b6eaf790c26cdf' => 
+    '7453c98d69837dc3819cac691804f511b5073143' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web 2\\prueba\\templates\\header.tpl',
-      1 => 1665374167,
+      0 => 'C:\\xampp\\htdocs\\web 2\\tpe 1er entrega web2\\templates\\header.tpl',
+      1 => 1665445664,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63443fee1fc8b6_34027594 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6345d531c70308_77198892 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +33,7 @@ function content_63443fee1fc8b6_34027594 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    
     <title>SHOP GARDEN</title>
 </head>
 <body>

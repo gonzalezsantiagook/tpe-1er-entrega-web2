@@ -2,42 +2,79 @@
 require_once './app/models/garden.model.php';
 require_once './app/views/garden.view.php';
 require_once './app/helpers/auth.helper.php';
+require_once './app/models/user.model.php';
 
 
 class gardenController {
     private $model;
     private $view;
+    private $type_model;
 
     public function __construct() {
         $this->model = new gardenModel();
         $this->view = new gardenView();
+        $this->type_model = new typemodel();
 
-        // barrera de seguridad
+// barrera de seguridad.
         $authHelper = new authHelper();
         $authHelper->checkLoggedIn();
     }
-
+// muestro la tabla con los datos que tiene en db.
     function showtable() {
         $gardens = $this->model->getAllTable();
-        $this->view->showTable($gardens);
+        $types = $this->type_model->getalltypes();
+        $this->view->showTable($gardens,$types);
     }
-
     
+// agrego un nuevo item en la tabla products.
     function addgarden() {
         $name =$_POST['name'];
         $price =$_POST['price'];
-        $image =$_POST['image'];
         $stock =$_POST['stock'];
         $size = $_POST['size'];
         $type = $_POST['type'];
-        $id = $this->model->insertgarden($name, $price, $image,$stock,$size,$type);
-
-        header("Location: " . BASE_URL); 
+        $id = $this->model->insertgarden($name, $price,$stock,$size,$type);
+        header("Location: " . BASE_URL."list"); 
     }
+// agrego un nuevo item en la tabla types.
+    function addtype(){
+        $type=$_POST['type'];
+        $season=$_POST['season'];
+        $this->model->insertype($type,$season);
+        header("Location: " . BASE_URL."list"); 
+    }
+// elimino un elemento de la tabla products en la db.
     function deletegarden($id) {
         $this->model->deletegardenById($id);
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_URL."list");
+    }
+// elimino un elemento de la tabla types en la db.
+    function deletetype($id){
+        $this->model->deletetypebyId($id);
+        header("location:". BASE_URL."list");
+    }
+// llamo a mostrar el tpl donde muestra el formulario para modificar el elemento.
+    function showmodificproduct($Id){
+        $gardens = $this->model->getAllTable();
+        foreach($gardens as $product){
+                if ($product->Id==$Id)
+                    $this->view->showmodificproduct($product);
+        }
+    }
+// modifico un elemento de la tabla products.
+  public  function modificgarden($Id){ 
+        $name =$_POST["name"];
+        $price =$_POST["price"];
+        $stock =$_POST["stock"];
+        $size = $_POST["size"];
+        $type = $_POST["type"];
+        $this->model->updategarden($name, $price,$stock,$size,$type, $Id);
+        header("Location: " . BASE_URL."list"); 
+    }
+// filtro tipos
+    function filtertype(){
+
     }
 
-
+    
 }

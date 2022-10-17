@@ -1,0 +1,21 @@
+body{
+    background-color: aliceblue;
+
+}
+.formalta{
+    display: flex;
+    flex-direction: row;
+}
+.footerstyle{
+    background-color: rgb(131, 166, 180);
+    font-family: cursive 2px,;
+    font-size: x-large;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centrador{
+display: flex;
+flex-direction: row;
+}

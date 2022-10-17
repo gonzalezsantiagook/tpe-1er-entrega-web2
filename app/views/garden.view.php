@@ -1,18 +1,33 @@
 <?php
-class gardenView {
+require_once './libs/smarty/libs/Smarty.class.php';
 
-    function showTable($gardens) {
-        include './templates/header.tpl';    
-        include './templates/form_alta.tpl';
-        
-        echo '<ul class="list-group">';
-        foreach ($gardens as $products) {
-            echo "<li class='list-group-item d-flex justify-content-between align-items-center'>
-                    <span> <b>$products->Id</b> - $products->name- $products->price- $products->image - $products->stock - $products->size - $products->type</span>
-                </li>";
-        }
-        echo "</ul>";
+class gardenView{
+    private $smarty;
+
+    public function __construct(){
+        $this->smarty = new smarty();
+    }
+
+    function showTable($products,$types){
+        $this->smarty->assign('products',$products);
+        $this->smarty->assign('types',$types);
+        $this->smarty->display('gardenlist.tpl');
+    }  
+    function showTabletype($types){
+        $this->smarty->assign('types',$types);
+        $this->smarty->display('gardenlist.tpl');
+    } 
+
+
     
-        include './templates/footer.tpl';
+    function showmodificproduct($product){
+        $this->smarty->assign('product',$product);
+        $this->smarty->display('modific.tpl');
+    }
+    function showfilterproduct(){
+        $this-> smarty->assign('product')
+
     }
 }
+
+
