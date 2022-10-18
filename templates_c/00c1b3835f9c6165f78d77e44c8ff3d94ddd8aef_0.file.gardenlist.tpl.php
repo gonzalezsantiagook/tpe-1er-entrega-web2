@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 22:22:51
+/* Smarty version 4.2.1, created on 2022-10-18 04:23:58
   from 'C:\xampp\htdocs\web 2\TPE\templates\gardenlist.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634db99b08a626_03550533',
+  'unifunc' => 'content_634e0e3e6d5969_74863287',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '00c1b3835f9c6165f78d77e44c8ff3d94ddd8aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web 2\\TPE\\templates\\gardenlist.tpl',
-      1 => 1666037028,
+      1 => 1666059091,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634db99b08a626_03550533 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634e0e3e6d5969_74863287 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -60,6 +60,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ">eliminar</a>
             <a type="button" class="btn btn-warning " href="modificproduct/<?php echo $_smarty_tpl->tpl_vars['product']->value->Id;?>
 ">modificar</a>
+            <a type="button" class="btn btn-success " href="seeproduct/<?php echo $_smarty_tpl->tpl_vars['product']->value->Id;?>
+">ver</a>
             </tr>
         <?php
 }
@@ -92,8 +94,12 @@ $_smarty_tpl->tpl_vars['type']->do_else = false;
             <td>
                 <a type="button" class="btn btn-danger " href="deletetype/<?php echo $_smarty_tpl->tpl_vars['type']->value->id;?>
 ">eliminar</a>
-                <a type="button" class="btn btn-warning " href="filter/<?php echo $_smarty_tpl->tpl_vars['type']->value->Id;?>
+                
+                <a type="button" class="btn btn-warning " href="filter/<?php echo $_smarty_tpl->tpl_vars['type']->value->id;?>
 ">filtrar</a>
+
+                <a type="button" class="btn btn-warning " href="modifictype/<?php echo $_smarty_tpl->tpl_vars['type']->value->id;?>
+">modificar</a>
             </td>
             </tr>
         <?php

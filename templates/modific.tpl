@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 
 <div class="formmodific">
-    <form action="update" method="POST" class="my-4">
+<form method="POST" action="update/{$product->id}">
         <div class="row">
             <div class="col-9">
                 <div class="form-group">
@@ -20,12 +20,19 @@
                     <label>tamaño</label>
                     <input name="size" type="text" class="form-control">
                 </div>
+                <div>
+                <label>tipo</label>
+                <select name="type">
+                {foreach from=$types item=$type}
+                    <option value="{$type->id}">{$type->type}/{$type->season}</option>
+                {/foreach}
+                </select>
+                </div> 
             </div>
         </div>
-        <input type="submit" value="modificar"></input>
-    </form>
+                <input type="submit" value="enviar">
+</form>
 </div>
 
 
-{include file='footer.tpl'}
-
+{include file="footer.tpl"}

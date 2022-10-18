@@ -57,12 +57,11 @@ switch ($params[0]) {
         $id = $params[1];
         $gardenController->deletegarden($id);
         break;
-
-    case 'deletype':
-        $gardenController = new gardenController();
-        $gardenController->deletetype($id);
-        break;
-
+    case 'deletetype':
+            $gardenController = new gardenController();
+            $id = $params[1];
+            $gardenController->deletetype($id);
+            break;
     case 'modificproduct':
         $gardenController = new gardenController();
         $id = $params[1];
@@ -72,12 +71,27 @@ switch ($params[0]) {
     case 'update':
         $gardenController = new gardenController();
         $id = $params[1];
-        $gardenController -> modificgarden($id);
+        $gardenController-> modificgarden($id);
         break;
+    case 'updatetype':
+        $gardenController = new gardenController();
+        $id = $params[1];
+        $gardenController-> updatetype($id);
+        break;       
     case 'filter':
         $gardenController = new gardenController();
         $id = $params[1];
         $gardenController-> filtertype($id);
+        break;
+    case 'seeproduct':
+        $gardenController = new gardenController();
+        $id = $params[1];
+        $gardenController-> seeproduct($id);
+        break;
+    case 'modifictype':
+        $gardenController = new gardenController();
+        $id = $params[1];
+        $gardenController-> modifictype($id);
         break;
 
     default:

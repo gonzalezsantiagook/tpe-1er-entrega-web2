@@ -28,7 +28,6 @@ class gardenController {
     
 // agrego un nuevo item en la tabla products.
     function addgarden() {
-        $this->authHelper->checkLoggedIn();
         $name =$_POST['name'];
         $price =$_POST['price'];
         $stock =$_POST['stock'];
@@ -39,7 +38,6 @@ class gardenController {
     }
 // agrego un nuevo item en la tabla types.
     function addtype(){
-        $this->authHelper->checkLoggedIn();
         $type=$_POST['type'];
         $season=$_POST['season'];
         $this->model->insertype($type,$season);
@@ -52,39 +50,65 @@ class gardenController {
     }
 // elimino un elemento de la tabla types en la db.
     function deletetype($id){
-        $this->authHelper->checkLoggedIn();
         $this->model->deletetypebyId($id);
         header("location:". BASE_URL."list");
     }
 // llamo a mostrar el tpl donde muestra el formulario para modificar el elemento.
     function showmodificproduct($Id){
-        $this->authHelper->checkLoggedIn();
         $gardens = $this->model->getAllTable();
-        foreach($gardens as $product){
-                if ($product->Id==$Id)
-                    $this->view->showmodificproduct($product);
+        $types = $this->type_model->getalltypes();
+        $ProductsAll = $this->type_model->ProductsAll($gardens);
+        foreach($ProductsAll as $product){
+                if ($product->id==$Id)
+                    $this->view->showmodificproduct($product,$types);
         }
     }
 // modifico un elemento de la tabla products.
-    public  function modificgarden($Id){ 
-        $this->authHelper->checkLoggedIn();
+    public  function modificgarden($id){ 
         $name =$_POST["name"];
         $price =$_POST["price"];
         $stock =$_POST["stock"];
         $size = $_POST["size"];
         $type = $_POST["type"];
-        $this->model->updategarden($name, $price,$stock,$size,$type, $Id);
-        header("Location: " . BASE_URL."list"); 
+        $this->model->updategarden($name, $price,$stock,$size,$type,$id);
+        header("Location: " . BASE_URL."list");
     }
-// filtro tipos
-    function filtertype($id){
-        $this->authHelper->checkLoggedIn();
-    $gardens = $this->model-> getAllTable();
-    foreach ($gardens as $product) {
-        if($product->id==$id)
-                $this->view->showfilterproduct();
-    }
+    function modifictype($id){
+        $types =$this->type_model->getalltypes();
+        foreach ($types as $type) {
+            if ($type->id==$id)
+                $this->view->modifictype($type,$types);
+        }
+
+
     }
 
+    function updatetype($id){
+        $type = $_POST['type'];
+        $season = $_POST['season'];
+        $this->type_model-> updatetype($id,$type,$season);
+            header("Location: " . BASE_URL."list");
+    }  
+
+// filtro tipos
+    function filtertype($id){
+    $gardens = $this->model-> getAllTable();
+    $filter = array();
+    foreach ($gardens as $product) {
+        if($product->type==$id)
+            array_push($filter,$product);
+    }
+    $this->view->showfilterproduct($filter);
+    }
+
+
+    function seeproduct($id){
+    $gardens = $this->model-> getAllTable();
+    $ProductsAll = $this->type_model->ProductsAll($gardens);
+    foreach ($ProductsAll as $product) {  
+        if($product->id==$id)
+            $this->view->seeproduct($product);
+    }
+    }
     
 }

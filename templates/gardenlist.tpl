@@ -19,6 +19,7 @@
             {$product->stock}</td><td>{$product->size}</td><td>{$product->type} 
             </td> <td><a type="button" class="btn btn-danger " href="delete/{$product->Id}">eliminar</a>
             <a type="button" class="btn btn-warning " href="modificproduct/{$product->Id}">modificar</a>
+            <a type="button" class="btn btn-success " href="seeproduct/{$product->Id}">ver</a>
             </tr>
         {/foreach}
         </tr>
@@ -40,7 +41,10 @@
             <td>{$type->season}</td>
             <td>
                 <a type="button" class="btn btn-danger " href="deletetype/{$type->id}">eliminar</a>
-                <a type="button" class="btn btn-warning " href="filter/{$type->Id}">filtrar</a>
+                
+                <a type="button" class="btn btn-warning " href="filter/{$type->id}">filtrar</a>
+
+                <a type="button" class="btn btn-warning " href="modifictype/{$type->id}">modificar</a>
             </td>
             </tr>
         {/foreach}

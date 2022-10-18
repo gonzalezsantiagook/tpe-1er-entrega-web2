@@ -20,13 +20,25 @@ class gardenView{
 
 
     
-    function showmodificproduct($product){
+    function showmodificproduct($product, $types){
         $this->smarty->assign('product',$product);
+        $this->smarty->assign('types',$types);
         $this->smarty->display('modific.tpl');
+        var_dump($product);
     }
-    function showfilterproduct(){
-        $this-> smarty->assign('product');
 
+    function showfilterproduct($filter){
+        $this->smarty->assign('products',$filter);
+        $this->smarty->display(('filter.tpl'));
+    }
+    function seeproduct($product){
+        $this->smarty->assign('product',$product);
+        $this->smarty->display(('seeproduct.tpl'));
+    }
+    function modifictype($type,$types){
+        $this->smarty->assign('type',$type);
+        $this->smarty->assign('types',$types);
+        $this->smarty->display(('modifictype.tpl'));
     }
 }
 

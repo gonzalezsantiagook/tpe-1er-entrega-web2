@@ -15,6 +15,8 @@ public function getAllTable() {
     
     return $gardens;
 }
+
+
 //inserto nueva planta
     public function insertgarden($name, $price,$stock,$size,$type) {
         $query = $this->db->prepare("INSERT INTO products ( name, price, stock, size,type) VALUES (?, ?, ?,?,?)");
@@ -40,8 +42,8 @@ public function getAllTable() {
     }
 
 // actualizo un producto
-    function updategarden($name, $price,$stock,$size,$type,$Id){
-        $query = $this-> db-> prepare("UPDATE FROM products SET 'name=$name','price=$price', 'stock=$stock','size=$size','type=$type' WHERE 'ID=$Id'");
-        $query->execute([$name, $price,$stock,$size,$type,$Id]);
+    function updategarden($name, $price,$stock,$size,$type,$id){
+        $query = $this-> db-> prepare('UPDATE products SET `name`=?,`price`=?, `stock`=?,`size`=?, `type`=? WHERE Id=?');
+        $query->execute([$name, $price,$stock,$size,$type,$id]);
         }
 }            
