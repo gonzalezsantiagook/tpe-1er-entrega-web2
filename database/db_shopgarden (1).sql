@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2022 a las 20:10:18
+-- Tiempo de generación: 18-10-2022 a las 04:35:15
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -43,10 +43,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`Id`, `name`, `price`, `stock`, `size`, `type`) VALUES
-(8, 'asarero', 1200, 123, 9, 4),
 (9, 'peras', 2500, 122, 12.5, 1),
 (13, 'manzano', 3700, 23, 12.5, 1),
-(14, 'ciruelo', 2500, 122, 12.5, 2);
+(14, 'ciruelo', 2500, 122, 12.5, 2),
+(21, 'ciruelo', 2500, 12, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -69,9 +69,7 @@ INSERT INTO `types` (`id`, `type`, `season`) VALUES
 (2, 'frutales', 'invierno'),
 (3, 'arbusto', 'verano'),
 (4, 'arbusto', 'invierno'),
-(5, 'bonsai', 'verano'),
-(6, 'bonsai', 'verano'),
-(8, 'flor', 'verano');
+(5, 'flor', 'otoño');
 
 -- --------------------------------------------------------
 
@@ -124,13 +122,13 @@ ALTER TABLE `usersgarden`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `usersgarden`
